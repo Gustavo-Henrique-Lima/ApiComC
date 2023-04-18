@@ -51,7 +51,7 @@ namespace Controllers
          [HttpGet("minvalue={minValue}&&maxvalue={maxValue}")]
         public ActionResult<List<Livro>> getValue(double minValue,double maxValue)
         {
-                List<Livro> livros=LivroService.filter(minValue,maxValue);
+                List<Livro> livros=LivroService.filterByValue(minValue,maxValue);
                 if(livros.Count>0)
                     return livros;
                 return NoContent();
