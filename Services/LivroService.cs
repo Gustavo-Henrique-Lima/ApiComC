@@ -72,7 +72,10 @@ namespace APIC.Services
             List<Livro> filtrados=livros.FindAll(l=> l.valor>=minValue && l.valor<=maxValue).ToList();
             return filtrados;
        }
-
-       
+       public static List<Livro> filterByWord(string palavra)
+       {
+            List<Livro> filtrados=livros.FindAll(l=> l.name.ToLower().Contains(palavra.ToLower()));
+            return filtrados;
+       }
     }    
 }

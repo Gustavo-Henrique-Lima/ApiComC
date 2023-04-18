@@ -54,7 +54,16 @@ namespace Controllers
                 List<Livro> livros=LivroService.filterByValue(minValue,maxValue);
                 if(livros.Count>0)
                     return livros;
-                return NoContent();
+                return NotFound();
+        }
+
+        [HttpGet("palavra={word}")]
+        public ActionResult<List<Livro>> getWord(string word)
+        {
+                List<Livro> livros=LivroService.filterByWord(word);
+                if(livros.Count>0)
+                    return livros;
+                return NotFound();
         }
     }
 }
