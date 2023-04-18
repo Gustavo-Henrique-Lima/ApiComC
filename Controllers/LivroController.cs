@@ -48,5 +48,13 @@ namespace Controllers
             LivroService.update(livro);
             return NoContent();
         }
+         [HttpGet("minvalue={minValue}&&maxvalue={maxValue}")]
+        public ActionResult<List<Livro>> getValue(double minValue,double maxValue)
+        {
+                List<Livro> livros=LivroService.filter(minValue,maxValue);
+                if(livros.Count>0)
+                    return livros;
+                return NoContent();
+        }
     }
 }

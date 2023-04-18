@@ -67,5 +67,10 @@ namespace APIC.Services
              return;
          livros[index]=livro;
        }
+       public static List<Livro> filter(double minValue,double maxValue)
+       {
+            List<Livro> filtrados=livros.FindAll(l=> l.valor>=minValue && l.valor<=maxValue).ToList();
+            return filtrados;
+       }
     }    
 }
