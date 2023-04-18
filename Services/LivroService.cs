@@ -1,6 +1,6 @@
 using APIC.Models;
 
-namespace Services
+namespace APIC.Services
 {
     public class LivroService
     {
